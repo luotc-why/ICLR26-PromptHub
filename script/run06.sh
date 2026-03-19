@@ -1,0 +1,21 @@
+#!/bin/bash
+
+python3 ICLR26-PromptHub/val_vp_segmentation.py \
+ --fold 2 \
+ --mode spimg_spmask \
+ --output_dir Datasets_PromptHub/output/logs\
+ --device cuda:0\
+ --base_dir Datasets_PromptHub/pascal-5i/ \
+ --batch-size 8 \
+ --lr 0.03\
+ --epoch 150\
+ --arr a1\
+ --vp-model Prompt\
+ --p-eps 1\
+ --ckpt Datasets_PromptHub/weights/checkpoint-1000.pth\
+ --vq_ckpt_dir Datasets_PromptHub/weights/vqgan\
+ --save_base_dir Datasets_PromptHub/\
+ --simidx 16\
+ --dropout 0.25\
+ --sigma 0.65\
+ --save_model_path Datasets_PromptHub/ckpt/Seg_K_16_Fold_2.pth
